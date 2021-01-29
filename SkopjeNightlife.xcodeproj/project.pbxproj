@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,10 @@
 		26E44AA925C460E000F9F0E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26E44AA725C460E000F9F0E8 /* Main.storyboard */; };
 		26E44AAB25C460E100F9F0E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26E44AAA25C460E100F9F0E8 /* Assets.xcassets */; };
 		26E44AAE25C460E100F9F0E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26E44AAC25C460E100F9F0E8 /* LaunchScreen.storyboard */; };
+		26E44AB625C47E4200F9F0E8 /* LokaliTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E44AB525C47E4200F9F0E8 /* LokaliTableViewController.swift */; };
+		26E44AB825C4939700F9F0E8 /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E44AB725C4939700F9F0E8 /* AdminViewController.swift */; };
+		26E44ABA25C4A73300F9F0E8 /* LokalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E44AB925C4A73300F9F0E8 /* LokalTableViewCell.swift */; };
+		F980EE7E0F3C73779663672C /* Pods_SkopjeNightlife.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 313858B07C96AFBFDBD516CF /* Pods_SkopjeNightlife.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,12 @@
 		26E44AAA25C460E100F9F0E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		26E44AAD25C460E100F9F0E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		26E44AAF25C460E100F9F0E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26E44AB525C47E4200F9F0E8 /* LokaliTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LokaliTableViewController.swift; sourceTree = "<group>"; };
+		26E44AB725C4939700F9F0E8 /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
+		26E44AB925C4A73300F9F0E8 /* LokalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LokalTableViewCell.swift; sourceTree = "<group>"; };
+		29F893B896485DD61797A1C2 /* Pods-SkopjeNightlife.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkopjeNightlife.release.xcconfig"; path = "Target Support Files/Pods-SkopjeNightlife/Pods-SkopjeNightlife.release.xcconfig"; sourceTree = "<group>"; };
+		313858B07C96AFBFDBD516CF /* Pods_SkopjeNightlife.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkopjeNightlife.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		91FE0D90EF310FF88DC0A727 /* Pods-SkopjeNightlife.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkopjeNightlife.debug.xcconfig"; path = "Target Support Files/Pods-SkopjeNightlife/Pods-SkopjeNightlife.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F980EE7E0F3C73779663672C /* Pods_SkopjeNightlife.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +53,8 @@
 			children = (
 				26E44AA025C460E000F9F0E8 /* SkopjeNightlife */,
 				26E44A9F25C460E000F9F0E8 /* Products */,
+				C718F21496DDCE4BE3C5DDA8 /* Pods */,
+				959E39FE58AEB406ACED2289 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,12 +72,32 @@
 				26E44AA125C460E000F9F0E8 /* AppDelegate.swift */,
 				26E44AA325C460E000F9F0E8 /* SceneDelegate.swift */,
 				26E44AA525C460E000F9F0E8 /* ViewController.swift */,
+				26E44AB525C47E4200F9F0E8 /* LokaliTableViewController.swift */,
+				26E44AB725C4939700F9F0E8 /* AdminViewController.swift */,
 				26E44AA725C460E000F9F0E8 /* Main.storyboard */,
 				26E44AAA25C460E100F9F0E8 /* Assets.xcassets */,
 				26E44AAC25C460E100F9F0E8 /* LaunchScreen.storyboard */,
 				26E44AAF25C460E100F9F0E8 /* Info.plist */,
+				26E44AB925C4A73300F9F0E8 /* LokalTableViewCell.swift */,
 			);
 			path = SkopjeNightlife;
+			sourceTree = "<group>";
+		};
+		959E39FE58AEB406ACED2289 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				313858B07C96AFBFDBD516CF /* Pods_SkopjeNightlife.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C718F21496DDCE4BE3C5DDA8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				91FE0D90EF310FF88DC0A727 /* Pods-SkopjeNightlife.debug.xcconfig */,
+				29F893B896485DD61797A1C2 /* Pods-SkopjeNightlife.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 26E44AB225C460E100F9F0E8 /* Build configuration list for PBXNativeTarget "SkopjeNightlife" */;
 			buildPhases = (
+				090C829773ED945C6AF1823C /* [CP] Check Pods Manifest.lock */,
 				26E44A9A25C460E000F9F0E8 /* Sources */,
 				26E44A9B25C460E000F9F0E8 /* Frameworks */,
 				26E44A9C25C460E000F9F0E8 /* Resources */,
+				188E7FC2831587B7F4631769 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -103,7 +138,7 @@
 				};
 			};
 			buildConfigurationList = 26E44A9925C460E000F9F0E8 /* Build configuration list for PBXProject "SkopjeNightlife" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -133,14 +168,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		090C829773ED945C6AF1823C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SkopjeNightlife-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		188E7FC2831587B7F4631769 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SkopjeNightlife/Pods-SkopjeNightlife-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SkopjeNightlife/Pods-SkopjeNightlife-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SkopjeNightlife/Pods-SkopjeNightlife-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		26E44A9A25C460E000F9F0E8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				26E44AA625C460E000F9F0E8 /* ViewController.swift in Sources */,
+				26E44AB625C47E4200F9F0E8 /* LokaliTableViewController.swift in Sources */,
 				26E44AA225C460E000F9F0E8 /* AppDelegate.swift in Sources */,
+				26E44AB825C4939700F9F0E8 /* AdminViewController.swift in Sources */,
 				26E44AA425C460E000F9F0E8 /* SceneDelegate.swift in Sources */,
+				26E44ABA25C4A73300F9F0E8 /* LokalTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,11 +362,13 @@
 		};
 		26E44AB325C460E100F9F0E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91FE0D90EF310FF88DC0A727 /* Pods-SkopjeNightlife.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 642RT3TC32;
 				INFOPLIST_FILE = SkopjeNightlife/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -294,17 +376,19 @@
 				PRODUCT_BUNDLE_IDENTIFIER = feit.SkopjeNightlife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		26E44AB425C460E100F9F0E8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29F893B896485DD61797A1C2 /* Pods-SkopjeNightlife.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 642RT3TC32;
 				INFOPLIST_FILE = SkopjeNightlife/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,7 +396,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = feit.SkopjeNightlife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
