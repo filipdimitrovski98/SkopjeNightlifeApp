@@ -108,7 +108,7 @@ class LokaliTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         sendobjectId = objectIds[indexPath.row]
-        //performSegue(withIdentifier: "", sender: nil)
+        performSegue(withIdentifier: "todetail", sender: nil)
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 199

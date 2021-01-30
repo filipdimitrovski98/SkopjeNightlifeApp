@@ -44,6 +44,8 @@ class AdminViewController: UIViewController,MKMapViewDelegate,CLLocationManagerD
     @IBOutlet weak var imeTextField: UITextField!
     @IBOutlet weak var tiplokalTextField: UITextField!
     
+    @IBOutlet weak var kontaktTextField: UITextField!
+    @IBOutlet weak var dresscodeTextfield: UITextField!
     @IBOutlet weak var rabotnovremeTextField: UITextField!
     
     @objc func longpress(gestureRecognizer: UIGestureRecognizer) {
@@ -113,12 +115,14 @@ class AdminViewController: UIViewController,MKMapViewDelegate,CLLocationManagerD
     @IBAction func createPlace(_ sender: Any) {
         
         if let image = imageToPost.image {
-            
+            if pressed != false && imeTextField.text != "" && rabotnovremeTextField.text != "" && dresscodeTextfield.text != "" && tiplokalTextField.text != "" {
             let lokalEntry = PFObject(className: "Lokal")
             lokalEntry["name"] = imeTextField.text
             lokalEntry["lokacija"] = lokalplace
             lokalEntry["rabotnovreme"] = rabotnovremeTextField.text
+            lokalEntry["dresscode"] = dresscodeTextfield.text
             lokalEntry["tiplokal"] = tiplokalTextField.text
+            lokalEntry["kontakt"] = kontaktTextField.text
             
             //lokalEntry.saveInBackground()
             
@@ -146,6 +150,11 @@ class AdminViewController: UIViewController,MKMapViewDelegate,CLLocationManagerD
                         self.displayAlert(title: "Failed", message: error?.localizedDescription ?? "Please try again later")
                     }
                 }
+            }
+            }
+            else{
+                self.displayAlert(title: "Failed !", message: "Popolni gi site informacii")
+                
             }
             
             
