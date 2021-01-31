@@ -15,6 +15,7 @@ class LokaliTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+       self.modalPresentationStyle = .fullScreen
         updateTable()
         
     }
@@ -78,6 +79,12 @@ class LokaliTableViewController: UITableViewController {
         updateTable()
         
     }
+    @IBAction func logoutPressed(_ sender: Any) {
+          PFUser.logOut()
+          print("Logout Success")
+          navigationController?.dismiss(animated: true, completion: nil)
+          
+      }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -130,10 +137,12 @@ class LokaliTableViewController: UITableViewController {
             }
             else if let objects = objects {
                 if objects.count > 0 {
-                    print(objects.count)
+                    //print(objects.count)
+                    //print(objects[0].object(forKey: "objectId"))
                     for object in objects{
                         
-                        self.objectIds.append(object["objectId"] as! String)
+                        
+                        self.objectIds.append(object.objectId!)
                         self.names.append(object["name"] as! String)
                         self.tipovi.append(object["tiplokal"] as! String)
                         

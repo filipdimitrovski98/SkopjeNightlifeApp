@@ -29,6 +29,7 @@ class AdminViewController: UIViewController,MKMapViewDelegate,CLLocationManagerD
     var pressed = false
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.backgroundColor = .white
         let uilpgr = UILongPressGestureRecognizer(target: self, action: #selector(AdminViewController.longpress(gestureRecognizer:)))
         uilpgr.minimumPressDuration = 2
         map.addGestureRecognizer(uilpgr)
@@ -123,6 +124,8 @@ class AdminViewController: UIViewController,MKMapViewDelegate,CLLocationManagerD
             lokalEntry["dresscode"] = dresscodeTextfield.text
             lokalEntry["tiplokal"] = tiplokalTextField.text
             lokalEntry["kontakt"] = kontaktTextField.text
+                
+            
             
             //lokalEntry.saveInBackground()
             
@@ -161,6 +164,9 @@ class AdminViewController: UIViewController,MKMapViewDelegate,CLLocationManagerD
         }
         
         
+    }
+    @IBAction func requestPressed(_ sender: Any) {
+      performSegue(withIdentifier: "toManagerRequests", sender: nil)
     }
     @IBAction func logoutPressed(_ sender: Any) {
         PFUser.logOut()

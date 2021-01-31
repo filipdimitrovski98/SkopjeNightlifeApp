@@ -40,7 +40,7 @@ class LokalDetailViewController: UIViewController {
     let datePicker = UIDatePicker()
     
     func createDatePicker(){
-        datumvremeTextField.textAlignment = .center
+        datumvremeTextField.textAlignment = .left
         
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
@@ -64,6 +64,26 @@ class LokalDetailViewController: UIViewController {
         
     }
     
+    @IBAction func aplicirajMenadzer(_ sender: Any) {
+       let userquery = PFUser.query()
+        //print("korisnik")
+        //print(korisnikIds[indexPath.row])
+        let current = PFUser.current()?.objectId
+        userquery?.whereKey( "objectId", equalTo: current! )
+        userquery?.findObjectsInBackground(block: { (users,error) in
+            if error != nil {
+                print(error?.localizedDescription ?? "")
+            }
+            else if let users = users {
+                let user = users[0]
+                user["lokalId"] = sendobjectId
+                user["apliciral"] = "Da"
+                user.saveInBackground()
+            }
+            
+        })
+    }
+    
     @IBAction func rezervirajPressed(_ sender: Any) {
         if selectedobjectIds.firstIndex(of: sendobjectId) != nil {
             displayAlert(title: "Cannot call this action", message: "Vekje ima isprateno baranje")
@@ -77,7 +97,7 @@ class LokalDetailViewController: UIViewController {
         baranjeEntry["gostinId"] = PFUser.current()?.objectId
         baranjeEntry["lokalId"] = sendobjectId
             baranjeEntry["opis"] = opisTextField.text
-        baranjeEntry["datum"] = //
+            baranjeEntry["datum"] = datumvremeTextField.text
             baranjeEntry["brojgosti"] = brosobiTextField.text
         baranjeEntry["status"] = "Ne potvrdena"
         
@@ -159,5 +179,10 @@ class LokalDetailViewController: UIViewController {
           alertController.addAction(UIAlertAction(title: "OK", style: .default))
           self.present(alertController, animated: true, completion: nil)
       }
+     override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+        navigationController?.navigationBar.backgroundColor = .white
+        //navigationController?.navigationBar.tintColor = .white
+    }
     
 }

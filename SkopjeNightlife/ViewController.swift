@@ -79,6 +79,7 @@ class ViewController: UIViewController {
                        user["phoneNumber"] = numberTextField.text
                        user["birthDate"] = birthDateTextField.text
                        user["korisnik"] = "obicen"
+                       user["apliciral"] = "Ne"
                        
                    user.signUpInBackground { (success, error) in
                        
@@ -87,7 +88,7 @@ class ViewController: UIViewController {
                            self.displayAlert(title: "Error signing up", message: errorString)
                        } else {
                            print("Sign up success!")
-                           self.performSegue(withIdentifier: "toDefektView", sender: self)
+                           self.performSegue(withIdentifier: "toLokali", sender: nil)
                        }
                    }
                    }
@@ -104,14 +105,14 @@ class ViewController: UIViewController {
                               print("Log in success!")
                            if(user!["korisnik"] as! String == "obicen"){
                                print(user!["korisnik"] as! String)
-                             self.performSegue(withIdentifier: "toLokali", sender: self)
+                             self.performSegue(withIdentifier: "toLokali", sender: nil)
                            }
                            else if(user!["korisnik"] as! String == "menadzer") {
-                             self.performSegue(withIdentifier: "toMenadzerHome ", sender: self) // TUKA SMENI
+                             self.performSegue(withIdentifier: "toMenadzerHome ", sender: nil) // TUKA SMENI
                            }
                             else if(user!["korisnik"] as! String == "admin") {
                             //print(user!["korisnik"])
-                            self.performSegue(withIdentifier: "toAdminView", sender: self) // TUKA SMENI
+                            self.performSegue(withIdentifier: "toAdminView", sender: nil) // TUKA SMENI
                             }
                             
                               

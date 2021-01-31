@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2629601C25C6EB8E00748C15 /* GostinRezervaciiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2629601B25C6EB8E00748C15 /* GostinRezervaciiTableViewController.swift */; };
+		2629601E25C6F0F700748C15 /* GostinRezervacijaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2629601D25C6F0F700748C15 /* GostinRezervacijaTableViewCell.swift */; };
+		2629602025C6F6DE00748C15 /* MenadzerRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2629601F25C6F6DE00748C15 /* MenadzerRequestTableViewCell.swift */; };
+		2629602225C6FB2600748C15 /* AdminRequestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2629602125C6FB2600748C15 /* AdminRequestsTableViewController.swift */; };
+		2629602425C703C200748C15 /* AdminRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2629602325C703C200748C15 /* AdminRequestViewController.swift */; };
 		266081DF25C5CC18005CA640 /* LokalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266081DE25C5CC18005CA640 /* LokalDetailViewController.swift */; };
 		26E44AA225C460E000F9F0E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E44AA125C460E000F9F0E8 /* AppDelegate.swift */; };
 		26E44AA425C460E000F9F0E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E44AA325C460E000F9F0E8 /* SceneDelegate.swift */; };
@@ -21,6 +26,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2629601B25C6EB8E00748C15 /* GostinRezervaciiTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GostinRezervaciiTableViewController.swift; sourceTree = "<group>"; };
+		2629601D25C6F0F700748C15 /* GostinRezervacijaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GostinRezervacijaTableViewCell.swift; sourceTree = "<group>"; };
+		2629601F25C6F6DE00748C15 /* MenadzerRequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenadzerRequestTableViewCell.swift; sourceTree = "<group>"; };
+		2629602125C6FB2600748C15 /* AdminRequestsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminRequestsTableViewController.swift; sourceTree = "<group>"; };
+		2629602325C703C200748C15 /* AdminRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminRequestViewController.swift; sourceTree = "<group>"; };
 		266081DE25C5CC18005CA640 /* LokalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LokalDetailViewController.swift; sourceTree = "<group>"; };
 		26E44A9E25C460E000F9F0E8 /* SkopjeNightlife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkopjeNightlife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26E44AA125C460E000F9F0E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,14 +84,19 @@
 				26E44AA125C460E000F9F0E8 /* AppDelegate.swift */,
 				26E44AA325C460E000F9F0E8 /* SceneDelegate.swift */,
 				26E44AB725C4939700F9F0E8 /* AdminViewController.swift */,
+				2629602125C6FB2600748C15 /* AdminRequestsTableViewController.swift */,
+				2629602325C703C200748C15 /* AdminRequestViewController.swift */,
 				26E44AA525C460E000F9F0E8 /* ViewController.swift */,
 				26E44AB525C47E4200F9F0E8 /* LokaliTableViewController.swift */,
+				2629601B25C6EB8E00748C15 /* GostinRezervaciiTableViewController.swift */,
 				266081DE25C5CC18005CA640 /* LokalDetailViewController.swift */,
 				26E44AA725C460E000F9F0E8 /* Main.storyboard */,
 				26E44AAA25C460E100F9F0E8 /* Assets.xcassets */,
 				26E44AAC25C460E100F9F0E8 /* LaunchScreen.storyboard */,
 				26E44AAF25C460E100F9F0E8 /* Info.plist */,
 				26E44AB925C4A73300F9F0E8 /* LokalTableViewCell.swift */,
+				2629601D25C6F0F700748C15 /* GostinRezervacijaTableViewCell.swift */,
+				2629601F25C6F6DE00748C15 /* MenadzerRequestTableViewCell.swift */,
 			);
 			path = SkopjeNightlife;
 			sourceTree = "<group>";
@@ -220,11 +235,16 @@
 			files = (
 				26E44AA625C460E000F9F0E8 /* ViewController.swift in Sources */,
 				26E44AB625C47E4200F9F0E8 /* LokaliTableViewController.swift in Sources */,
+				2629601E25C6F0F700748C15 /* GostinRezervacijaTableViewCell.swift in Sources */,
+				2629602025C6F6DE00748C15 /* MenadzerRequestTableViewCell.swift in Sources */,
 				26E44AA225C460E000F9F0E8 /* AppDelegate.swift in Sources */,
+				2629601C25C6EB8E00748C15 /* GostinRezervaciiTableViewController.swift in Sources */,
 				266081DF25C5CC18005CA640 /* LokalDetailViewController.swift in Sources */,
 				26E44AB825C4939700F9F0E8 /* AdminViewController.swift in Sources */,
+				2629602425C703C200748C15 /* AdminRequestViewController.swift in Sources */,
 				26E44AA425C460E000F9F0E8 /* SceneDelegate.swift in Sources */,
 				26E44ABA25C4A73300F9F0E8 /* LokalTableViewCell.swift in Sources */,
+				2629602225C6FB2600748C15 /* AdminRequestsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
