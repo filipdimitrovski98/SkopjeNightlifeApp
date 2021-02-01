@@ -40,10 +40,11 @@ class LokalEventsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        let cell = UITableViewCell.init(style: .default, reuseIdentifier: "eventkelija")
+        let cell = UITableViewCell.init(style: .value1, reuseIdentifier: "eventkelija")
         // Configure the cell...
         cell.textLabel?.text = names[indexPath.row]
         cell.detailTextLabel?.text = datumi[indexPath.row]
+        cell.backgroundColor = .systemYellow
         
         return cell
     }
