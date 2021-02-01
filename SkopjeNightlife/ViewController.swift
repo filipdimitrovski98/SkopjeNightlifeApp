@@ -103,17 +103,33 @@ class ViewController: UIViewController {
                               self.displayAlert(title: "Error logging in", message: errorString)
                           } else {
                               print("Log in success!")
-                           if(user!["korisnik"] as! String == "obicen"){
-                               print(user!["korisnik"] as! String)
-                             self.performSegue(withIdentifier: "toLokali", sender: nil)
-                           }
-                           else if(user!["korisnik"] as! String == "menadzer") {
-                             self.performSegue(withIdentifier: "toMenadzerHome ", sender: nil) // TUKA SMENI
-                           }
-                            else if(user!["korisnik"] as! String == "admin") {
-                            //print(user!["korisnik"])
-                            self.performSegue(withIdentifier: "toAdminView", sender: nil) // TUKA SMENI
-                            }
+                            let query = PFQuery(className: "Aplikacija")
+                            query.whereKey("status", equalTo: "Potvrdena")
+                            query.whereKey("menadzerId", equalTo: PFUser.current()?.objectId as? String)
+                            query.findObjectsInBackground(block: {
+                                (objects,error) in
+                                if error != nil {
+                                    print(error?.localizedDescription ?? "")
+                                }
+                                else if let objects = objects {
+                                    if objects.count > 0 {
+                                         let object = objects[0]
+                                        sendlokalId = object["lokalId"] as! String
+                                         self.performSegue(withIdentifier: "toMenadzerView", sender: nil)
+                                    }
+                                    else{
+                                        if(user!["korisnik"] as! String == "obicen"){
+                                            //print(user!["korisnik"] as! String)
+                                          self.performSegue(withIdentifier: "toLokali", sender: nil)
+                                        }
+                                         else if(user!["korisnik"] as! String == "admin") {
+                                         //print(user!["korisnik"])
+                                         self.performSegue(withIdentifier: "toAdminView", sender: nil) // TUKA SMENI
+                                         }
+                                    }
+                                }
+                            })
+                           
                             
                               
                           }

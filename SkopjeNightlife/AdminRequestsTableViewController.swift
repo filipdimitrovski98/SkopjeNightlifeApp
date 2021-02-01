@@ -8,7 +8,8 @@
 
 import UIKit
 import Parse
-
+var sendaplikacijaId = String()
+var sendlokalId = String()
 class AdminRequestsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
@@ -22,6 +23,8 @@ class AdminRequestsTableViewController: UITableViewController {
     var objectIds = [String]()
     var names = [String]()
     var lastnames = [String]()
+    var aplikacii = [String]()
+    var lokali = [String]()
 
     // MARK: - Table view data source
 
@@ -46,6 +49,9 @@ class AdminRequestsTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         sendobjectId = objectIds[indexPath.row]
+        sendaplikacijaId = aplikacii[indexPath.row]
+        sendlokalId = lokali[indexPath.row]
+        print("Aplikacija \(sendaplikacijaId)")
         performSegue(withIdentifier: "toRequestDetail", sender: nil)
     }
     
@@ -53,27 +59,40 @@ class AdminRequestsTableViewController: UITableViewController {
         self.names.removeAll()
         self.objectIds.removeAll()
         self.lastnames.removeAll()
+        self.objectIds.removeAll()
         
         
-        let query = PFUser.query()
-        query?.whereKey("apliciral", equalTo: "Da")
-        query?.findObjectsInBackground(block: { (users, error) in
+        let query = PFQuery(className: "Aplikacija")
+        query.whereKey("status", equalTo: "Ne potvrdena")
+        query.findObjectsInBackground(block: {
+            (objects,error) in
             if error != nil {
                 print(error?.localizedDescription ?? "")
             }
-            else if let users = users {
-                if users.count > 0 {
-                   // print(users.count)
-                    for user in users{
-                        
-                        self.objectIds.append(user.objectId!)
-                        self.names.append(user["name"] as! String)
-                        self.lastnames.append(user["lastName"] as! String)
-                       
-                        
-                    }
+            else if let objects = objects { //print(objects.count)
+                for object in objects {
+                    let queryy = PFUser.query()
+                    queryy?.whereKey("objectId", equalTo: object["menadzerId"])
+                    queryy?.findObjectsInBackground(block: {
+                        (users,error2) in
+                        if error2 != nil {
+                            print(error2?.localizedDescription ?? "")
+                        }
+                        else if let users = users { //print(users.count)
+                            let user = users[0]
+                            self.names.append(user["name"] as! String)
+                            self.lastnames.append(user["lastName"] as! String)
+                            self.objectIds.append(user.objectId!)
+                            self.aplikacii.append(object.objectId!)
+                            self.lokali.append(object["lokalId"] as! String)
+                            
+                            
+                        }
+                        OperationQueue.main.addOperation {
+                            self.tableView.reloadData()
+                        }
+                    })
                 }
-                
                 OperationQueue.main.addOperation {
                     self.tableView.reloadData()
                 }

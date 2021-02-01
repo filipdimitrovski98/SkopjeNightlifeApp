@@ -20,7 +20,9 @@ class LokalDetailViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         selectedobjectIds.removeAll()
+        var apliciral = false
     }
+    
     
     @IBOutlet weak var tiplokalLabel: UILabel!
     
@@ -65,23 +67,29 @@ class LokalDetailViewController: UIViewController {
     }
     
     @IBAction func aplicirajMenadzer(_ sender: Any) {
-       let userquery = PFUser.query()
-        //print("korisnik")
-        //print(korisnikIds[indexPath.row])
-        let current = PFUser.current()?.objectId
-        userquery?.whereKey( "objectId", equalTo: current! )
-        userquery?.findObjectsInBackground(block: { (users,error) in
+       
+        let query = PFQuery(className: "Aplikacija")
+        query.whereKey("lokalId", equalTo: sendobjectId)
+        query.whereKey("status", notEqualTo: "Odbiena")
+        query.whereKey("menadzerId", equalTo: PFUser.current()?.objectId )
+        query.findObjectsInBackground(block: {
+            (objects,error) in
             if error != nil {
                 print(error?.localizedDescription ?? "")
             }
-            else if let users = users {
-                let user = users[0]
-                user["lokalId"] = sendobjectId
-                user["apliciral"] = "Da"
-                user.saveInBackground()
+            else if objects?.count ?? 0 > 0  {
+                self.displayAlert(title: "Failed", message: "Vekje imate tekovna aplikacija")
+                return
             }
+            let aplikacijaEntry = PFObject(className: "Aplikacija")
+                aplikacijaEntry["lokalId"] = sendobjectId
+             aplikacijaEntry["menadzerId"] = PFUser.current()?.objectId
+            aplikacijaEntry["status"] = "Ne potvrdena"
+            aplikacijaEntry.saveInBackground()
+            print("Uspesno apliciranje")
             
         })
+            
     }
     
     @IBAction func rezervirajPressed(_ sender: Any) {
